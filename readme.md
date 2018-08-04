@@ -15,22 +15,22 @@ This library was developed by [Ricardo Dominguez Olmedo](https://github.com/Rica
 
 ## Repository contents
 
-The BoeBot_EMG library (libraries/BoeBot_EMG/) provides the backbone for:
+The [BoeBot_EMG library](/libraries/BoeBot_EMG/) provides the backbone for:
  * Analog sampling of the EMG signals outputted by the SpikerShield.
  * Calibration and filtering to convert the EMG signals sampled into commands for the robot.
  * Communication between the Arduino fitted with the SpikerShields and the Arduino within the BoeBot.
  * Differential drive control of the BoeBot.
 
 Additional, several scripts are included to demonstrate the functionality of the library:
- * SpikerShield/
+ * [SpikerShield](/scripts/SpikerShield/)
    * [*SpikerShield_2inputs_2actions*](/scripts/SpikerShield/SpikerShield_2inputs_2actions/SpikerShield_2inputs_2actions.ino): reads EMG data from two different analog inputs, interprets it into two discrete actions for motor control (stop and forward, or forward and backward), and sends the information to the ESP8266 via serial.
    * [*SpikerShield_2inputs_3actions*](/scripts/SpikerShield/SpikerShield_2inputs_3actions/SpikerShield_2inputs_3actions.ino): reads EMG data from two different analog inputs, interprets it into three discrete actions for motor control (stop, forward and backward), and sends the information to the ESP8266 via serial.
    * [*SpikerShield_2inputs_spike*](/scripts/SpikerShield/SpikerShield_2inputs_spikes/SpikerShield_2inputs_spikes.ino): reads EMG data from two different analog inputs, counting continuous fast flexes from the user (called spikes). Interprets the number of spikes into three discrete actions for motor control(stop, forward and backward), and sends the information the the ESP8266 via serial.
    * [*SpikerShield_2inputs_variableSpeed*](/scripts/SpikerShield/SpikerShield_2inputs_variableSpeed/SpikerShield_2inputs_variableSpeed.ino): reads EMG data from two different analog inputs, interprets it into several discrete velocities and sends the information to the ESP8266 via serial.
    * [*SpikerShield_claw*](/scripts/SpikerShield/SpikerShield_claw/SpikerShield_claw.ino): reads EMG data from a single analog input, interprets it into two discrete actions for claw control (open, closed), and drives the attached claw accordingly.
    * [*SpikerShield_print_raw_EMG_data*](/scripts/SpikerShield/SpikerShield_print_raw_EMG_data/print_raw_EMG_data.ino): reads the EMG signal from a single SpikerShield and prints it to the Serial for the user to see. This way an user can familiarize itself with how the SpikerShield interprets muscle flexing.
-  * BoeBot/[*BoeBot_receive*](/scripts/BoeBot/BoeBot_receive/BoeBot_receive.ino): reads serial data coming from the ESP8266 and interprets this data into motor commands.
- * ESP8266/
+  * [BoeBot/*BoeBot_receive*](/scripts/BoeBot/BoeBot_receive/BoeBot_receive.ino): reads serial data coming from the ESP8266 and interprets this data into motor commands.
+ * [ESP8266](/scripts/ESP8266/)
    * [Server script](/scripts/ESP8266/ESP8266_server/init.lua): creates a server with the given ssid and pwd. It then listens indefinitely for incoming data, which sends through the Serial TX port to the Arduino in the BoeBot.
    * [Client script](/scripts/ESP8266/ESP8266_client/init.lua): tries to connect to the server with given ssid and pwd. When the connection is established, it listens indefinitely to the Serial RX port (connected to the Arduino with the SpikerShield), sending to the server all data received.
 
