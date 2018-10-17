@@ -24,7 +24,7 @@ This library was developed by [Ricardo Dominguez Olmedo](https://github.com/Rica
 
 ## Repository contents
 
-The [BoeBot_EMG library](/libraries/BoeBot_EMG/) provides the backbone for:
+The [BoeBot-EMG library](/libraries/BoeBot-EMG/) provides the backbone for:
  * Analog sampling of the EMG signals outputted by the SpikerShield.
  * Calibration and filtering to convert the EMG signals sampled into commands for the robot.
  * Communication between the Arduino fitted with the SpikerShields and the Arduino within the BoeBot.
