@@ -2,6 +2,15 @@
 
 This Arduino library allows you to control a [differential drive robot](https://groups.csail.mit.edu/drl/courses/cs54-2001s/diffdrive.html) by flexing your muscles! 
 
+- [Introduction](#introduction)
+- [Repository contents](#repository-contents)
+- [How EMG signals are translated into commands](#how-emg-signals-are-translated-into-commands)
+- [Steps for a working demo](#steps-for-a-working-demo)
+- [Using the ESP8266](#using-the-esp8266)
+
+
+## Introduction
+
 Muscle electrical activity is measured using [electromyography](https://en.wikipedia.org/wiki/Electromyography) or EMG.
 
 The hardware used for the development and testing of the library was:
@@ -34,7 +43,7 @@ Additional, several scripts are included to demonstrate the functionality of the
    * [Server script](/scripts/ESP8266/ESP8266_server/init.lua): creates a server with the given ssid and pwd. It then listens indefinitely for incoming data, which sends through the Serial TX port to the Arduino in the BoeBot.
    * [Client script](/scripts/ESP8266/ESP8266_client/init.lua): tries to connect to the server with given ssid and pwd. When the connection is established, it listens indefinitely to the Serial RX port (connected to the Arduino with the SpikerShield), sending to the server all data received.
 
-## How are the EMG signals translated into commands?
+## How EMG signals are translated into commands
 
 All scripts within SpikerShield/ work in a similar manner:
 1. **Calibration**:
